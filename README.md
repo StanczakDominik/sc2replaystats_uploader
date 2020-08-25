@@ -2,7 +2,7 @@ sc2replaystats_uploader
 =======================
 
 [![image](https://img.shields.io/pypi/v/sc2replaystats_uploader.svg)](https://pypi.python.org/pypi/sc2replaystats_uploader)
-[![image](https://img.shields.io/travis/StanczakDominik/sc2replaystats_uploader.svg)](https://travis-ci.com/StanczakDominik/sc2replaystats_uploader)
+![main](https://github.com/StanczakDominik/sc2replaystats_uploader/workflows/Python%20package/badge.svg)
 [![Documentation Status](https://readthedocs.org/projects/sc2replaystats-uploader/badge/?version=latest)](https://sc2replaystats-uploader.readthedocs.io/en/latest/?badge=latest)
 
 Script to automatically upload new StarCraft II replays appearing in a
