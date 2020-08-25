@@ -2,4 +2,11 @@
 
 __author__ = """Dominik Stańczak"""
 __email__ = "stanczakdominik@gmail.com"
-from .version import version as __version__
+
+from importlib.metadata import version, PackageNotFoundError
+
+try:
+    __version__ = version(__name__)
+except PackageNotFoundError:
+    # package is not installed
+   pass

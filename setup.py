@@ -45,6 +45,7 @@ setup(
     name='sc2replaystats_uploader',
     packages=find_packages(include=['sc2replaystats_uploader', 'sc2replaystats_uploader.*']),
     setup_requires=setup_requirements,
+    use_scm_version=True,
     test_suite='tests',
     tests_require=test_requirements,
     url='https://github.com/stanczakdominik/sc2replaystats_uploader',
