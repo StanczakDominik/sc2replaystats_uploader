@@ -21,11 +21,11 @@ logger.addHandler(console_handler)
 logger.setLevel(logging.INFO)
 
 
-def run_watcher(hashkey, auth, repdirs):
+def run_watcher(auth, repdirs):
     def upload_sc2repstats(path):
         headers = {"Authorization": auth}
         url = "http://api.sc2replaystats.com/replay"
-        data = {"upload_method": "ext", "hashkey": hashkey}
+        data = {"upload_method": "ext"}
         logger.info(f"Uploading game at {path} to sc2replaystats")
         with open(path, "rb") as f:
             r = requests.post(url, files={"replay_file": f}, data=data, headers=headers)

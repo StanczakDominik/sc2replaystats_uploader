@@ -29,10 +29,6 @@ Usage: sc2replaystats_uploader [OPTIONS]
   Console script for sc2replaystats_uploader.
 
 Options:
-  --hashkey TEXT  sc2replaystats hashkey; find it in
-                  https://sc2replaystats.com/account/settings -> Login Panel
-                  [required]
-
   --auth TEXT     sc2replaystats authorization key; find it in
                   https://sc2replaystats.com/account/settings -> API Access
                   [required]
@@ -50,7 +46,7 @@ You can either put them in as flags:
 
 ```
 
-sc2replaystats_uploader --auth "AUTHKEYGOESHERE" --hashkey "HASHKEYGOESHERE" --path "EU_REPLAY_DIR" --path "US_REPLAY_DIR"
+sc2replaystats_uploader --auth "AUTHKEYGOESHERE" --path "EU_REPLAY_DIR" --path "US_REPLAY_DIR"
 
 ```
 
@@ -58,8 +54,7 @@ Or you can use environment variables:
 
 ```
 export SC2REPLAYSTATS_AUTH="AUTHKEYGOESHERE"
-export SC2REPLAYSTATS_HASHKEY="HASHKEYGOESHERE"
-export SC2REPLAYSTATS_PATHS="EU_REPLAY_DIR:US_REPLAY_DIR"
+export SC2REPLAYSTATS_PATH="EU_REPLAY_DIR:US_REPLAY_DIR"
 sc2replaystats_uploader
 ```
 
@@ -74,8 +69,7 @@ to a pre-launch script to an executable Bash file containing the following:
 #!/usr/bin/bash
 # do other stuff, Toggl tracking, etc
 export SC2REPLAYSTATS_AUTH="AUTHKEYGOESHERE"
-export SC2REPLAYSTATS_HASHKEY="HASHKEYGOESHERE"
-export SC2REPLAYSTATS_PATHS="EU_REPLAY_DIR:US_REPLAY_DIR"
+export SC2REPLAYSTATS_PATH="EU_REPLAY_DIR:US_REPLAY_DIR"
 sc2replaystats_uploader
 
 ```

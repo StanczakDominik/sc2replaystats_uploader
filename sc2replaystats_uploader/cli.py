@@ -6,14 +6,6 @@ from .sc2replaystats_uploader import run_watcher
 
 @click.command()
 @click.option(
-    "--hashkey",
-    required=True,
-    help="sc2replaystats hashkey; find it in "
-    "https://sc2replaystats.com/account/settings -> Login Panel",
-    type=str,
-    envvar="SC2REPLAYSTATS_HASHKEY",
-)
-@click.option(
     "--auth",
     required=True,
     help="sc2replaystats authorization key; find it in "
@@ -32,9 +24,9 @@ from .sc2replaystats_uploader import run_watcher
     type=click.Path(),
     envvar="SC2REPLAYSTATS_PATH",
 )
-def main(hashkey, auth, path):
+def main(auth, path):
     """Console script for sc2replaystats_uploader."""
-    run_watcher(hashkey, auth, path)
+    run_watcher(auth, path)
 
 
 if __name__ == "__main__":
