@@ -32,7 +32,8 @@ Usage
 
 The parameters are documented:
 
-```bash
+```
+
 dominik@dell ~/Code/sc2replaystats_uploader % sc2replaystats_uploader --help                                                                                                             [0]
 Usage: sc2replaystats_uploader [OPTIONS]
 
@@ -57,14 +58,15 @@ Options:
 
 You can either put them in as flags: 
 
-```bash
+```
+
 sc2replaystats_uploader --auth "AUTHKEYGOESHERE" --hashkey "HASHKEYGOESHERE" --path "EU_REPLAY_DIR" --path "US_REPLAY_DIR"
 
 ```
 
 Or you can use environment variables:
 
-```bash
+```
 export SC2REPLAYSTATS_AUTH="AUTHKEYGOESHERE"
 export SC2REPLAYSTATS_HASHKEY="HASHKEYGOESHERE"
 export SC2REPLAYSTATS_PATHS="EU_REPLAY_DIR:US_REPLAY_DIR"
@@ -91,7 +93,7 @@ sc2replaystats_uploader
 
 Then, to shut the script down, have a post-exit script that goes
 
-```bash
+```
 #!/usr/bin/bash
 pkill -f sc2replaystats_uploader
 
