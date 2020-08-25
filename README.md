@@ -14,7 +14,7 @@ directory to sc2replaystats.
 Installation
 ------------
 
-Just [pip install sc2replaystats_uploader]{.title-ref}!
+Just `pip install sc2replaystats_uploader`!
 
 Usage
 -----
