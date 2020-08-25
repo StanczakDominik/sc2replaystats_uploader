@@ -10,7 +10,7 @@ with open('README.md') as readme_file:
 with open('HISTORY.md') as history_file:
     history = history_file.read()
 
-requirements = ['Click>=7.0', 'requests', 'watchdog']
+requirements = ['Click>=7.0', 'requests', 'watchdog', 'setuptools']
 
 setup_requirements = ['setuptools_scm']
 
