@@ -21,39 +21,44 @@ logger.addHandler(console_handler)
 logger.setLevel(logging.INFO)
 
 
+def upload_sc2repstats(path, auth):
+    headers = {"Authorization": auth}
+    url = "http://api.sc2replaystats.com/replay"
+    data = {"upload_method": "ext"}
+    logger.info(f"Uploading game at {path} to sc2replaystats")
+    with open(path, "rb") as f:
+        r = requests.post(url, files={"replay_file": f}, data=data, headers=headers)
+        if r.status_code == 200:
+            logger.info("Successfully uploaded replay.")
+        else:
+            logger.error(f"Failed to upload replay. Response text is: {r.text}")
+    return r
+
+class ReplayHandler(PatternMatchingEventHandler):
+    def __init__(self, auth, *args, **kwargs):
+        super().__init__(patterns=["*.SC2Replay"], *args, **kwargs)
+        self.auth = auth
+
+    def on_created(self, event):
+        path = event.src_path
+        logger.info(f"Found new replay at {path}")
+
+        time.sleep(3)
+        try:
+            upload_sc2repstats(path, self.auth)
+        except:
+            logger.exception(f"Failed to upload {path}. Skipping.")
+
 def run_watcher(auth, repdirs):
-    def upload_sc2repstats(path):
-        headers = {"Authorization": auth}
-        url = "http://api.sc2replaystats.com/replay"
-        data = {"upload_method": "ext"}
-        logger.info(f"Uploading game at {path} to sc2replaystats")
-        with open(path, "rb") as f:
-            r = requests.post(url, files={"replay_file": f}, data=data, headers=headers)
-            if r.status_code == 200:
-                logger.info("Successfully uploaded replay.")
-            else:
-                logger.error(f"Failed to upload replay. Response text is: {r.text}")
-        return r
-
-    class ReplayHandler(PatternMatchingEventHandler):
-        def on_created(self, event):
-            path = event.src_path
-            logger.info(f"Found new replay at {path}")
-
-            time.sleep(3)
-            try:
-                upload_sc2repstats(path)
-            except:
-                logger.exception(f"Failed to upload {path}. Skipping.")
-
     logger.info("Program started.")
     logger.info(f"Watching paths: {repdirs}")
 
     observer = Observer()
-    event_handler = ReplayHandler(patterns=["*.SC2Replay"])
+    event_handler = ReplayHandler(auth)
     for repdir in repdirs:
         observer.schedule(event_handler, repdir, recursive=False)
     observer.start()
+
     try:
         while True:
             time.sleep(1)
