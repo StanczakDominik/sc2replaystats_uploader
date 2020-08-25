@@ -8,21 +8,26 @@ from .sc2replaystats_uploader import run_watcher
 @click.option(
     "--hashkey",
     required=True,
-    help="sc2replaystats hashkey; find it in https://sc2replaystats.com/account/settings -> Login Panel",
+    help="sc2replaystats hashkey; find it in "
+    "https://sc2replaystats.com/account/settings -> Login Panel",
     type=str,
     envvar="SC2REPLAYSTATS_HASHKEY",
 )
 @click.option(
     "--auth",
     required=True,
-    help="sc2replaystats authorization key; find it in https://sc2replaystats.com/account/settings -> API Access",
+    help="sc2replaystats authorization key; find it in "
+    "https://sc2replaystats.com/account/settings -> API Access",
     type=str,
     envvar="SC2REPLAYSTATS_AUTH",
 )
 @click.option(
     "--path",
     required=True,
-    help="Directories in which to find replays. You can put multiple such options here. If using multiple in an environment variable, separate them with a colon ':'.",
+    help="Directories in which to find replays. "
+    "You can put multiple such options here."
+    "If using multiple in an environment variable, "
+    "separate them with a colon ':'.",
     multiple=True,
     type=click.Path(),
     envvar="SC2REPLAYSTATS_PATH",
