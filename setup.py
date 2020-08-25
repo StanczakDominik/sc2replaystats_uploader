@@ -12,7 +12,7 @@ with open('HISTORY.md') as history_file:
 
 requirements = ['Click>=7.0', 'requests', 'watchdog']
 
-setup_requirements = [ ]
+setup_requirements = ['setuptools_scm']
 
 test_requirements = ['pytest']
 
@@ -48,6 +48,5 @@ setup(
     test_suite='tests',
     tests_require=test_requirements,
     url='https://github.com/stanczakdominik/sc2replaystats_uploader',
-    version='0.1.3',
     zip_safe=False,
 )

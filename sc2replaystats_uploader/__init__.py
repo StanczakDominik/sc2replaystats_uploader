@@ -2,4 +2,4 @@
 
 __author__ = """Dominik Stańczak"""
 __email__ = "stanczakdominik@gmail.com"
-__version__ = "0.1.3"
+from .version import version as __version__
