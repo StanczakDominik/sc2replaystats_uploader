@@ -1,31 +1,22 @@
-=======================
 sc2replaystats_uploader
 =======================
 
+[![image](https://img.shields.io/pypi/v/sc2replaystats_uploader.svg)](https://pypi.python.org/pypi/sc2replaystats_uploader)
 
-.. image:: https://img.shields.io/pypi/v/sc2replaystats_uploader.svg
-        :target: https://pypi.python.org/pypi/sc2replaystats_uploader
+[![image](https://img.shields.io/travis/stanczakdominik/sc2replaystats_uploader.svg)](https://travis-ci.com/stanczakdominik/sc2replaystats_uploader)
 
-.. image:: https://img.shields.io/travis/stanczakdominik/sc2replaystats_uploader.svg
-        :target: https://travis-ci.com/stanczakdominik/sc2replaystats_uploader
+[![Documentation Status](https://readthedocs.org/projects/sc2replaystats-uploader/badge/?version=latest)](https://sc2replaystats-uploader.readthedocs.io/en/latest/?badge=latest)
 
-.. image:: https://readthedocs.org/projects/sc2replaystats-uploader/badge/?version=latest
-        :target: https://sc2replaystats-uploader.readthedocs.io/en/latest/?badge=latest
-        :alt: Documentation Status
+Script to automatically upload new StarCraft II replays appearing in a
+directory to sc2replaystats.
 
-
-
-
-Script to automatically upload new StarCraft II replays appearing in a directory to sc2replaystats.
-
-
-* Free software: MIT license
-* Documentation: https://sc2replaystats-uploader.readthedocs.io.
+-   Free software: MIT license
+-   Documentation: <https://sc2replaystats-uploader.readthedocs.io>.
 
 Installation
 ------------
 
-Just `pip install sc2replaystats_uploader`!
+Just [pip install sc2replaystats_uploader]{.title-ref}!
 
 Usage
 -----
@@ -56,7 +47,8 @@ Options:
 
 ```
 
-You can either put them in as flags: 
+You can either put them in as flags:
+
 
 ```
 
@@ -71,7 +63,6 @@ export SC2REPLAYSTATS_AUTH="AUTHKEYGOESHERE"
 export SC2REPLAYSTATS_HASHKEY="HASHKEYGOESHERE"
 export SC2REPLAYSTATS_PATHS="EU_REPLAY_DIR:US_REPLAY_DIR"
 sc2replaystats_uploader
-
 ```
 
 You can exit through Control-C.
@@ -98,12 +89,10 @@ Then, to shut the script down, have a post-exit script that goes
 pkill -f sc2replaystats_uploader
 
 ```
-
-
 Credits
 -------
 
-This package was created with Cookiecutter_ and the `audreyr/cookiecutter-pypackage`_ project template.
-
-.. _Cookiecutter: https://github.com/audreyr/cookiecutter
-.. _`audreyr/cookiecutter-pypackage`: https://github.com/audreyr/cookiecutter-pypackage
+This package was created with
+[Cookiecutter](https://github.com/audreyr/cookiecutter) and the
+[audreyr/cookiecutter-pypackage](https://github.com/audreyr/cookiecutter-pypackage)
+project template.
